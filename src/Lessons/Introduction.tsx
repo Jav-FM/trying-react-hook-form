@@ -1,19 +1,35 @@
 import { useForm } from "react-hook-form";
 
 const Introduction = () => {
-  // register function let us register individual inputs into the hook
-  // Through formState we can get the errors from all inputs
   const {
+    // register function let us register individual inputs into the hook
     register,
     handleSubmit,
+    //The watch function let us subscribe to the inputs to trigger something when they change
+    // If we dont pass any argument, it subscribes to the entire form
+    //If you want to subscribe to a specific input you pass the name as an argument
+    //Every keystroke will trigger a re-render
+    watch,
+    // Through formState we can get the errors from all inputs
     formState: { errors },
-  } = useForm();
+  } = useForm(
+    //As props of useForm you can define initial values
+    //Its recomended to always give initial values, even if they are ""
+    //That way typescript will spect those properties inside form values
+    {
+      defaultValues: {
+        firstName: "Bill",
+        lastName: "Gates",
+      },
+    }
+  );
 
-  console.log(errors);
+  console.log(watch());
 
   return (
     <div className="App">
       <form
+        className="form"
         onSubmit={handleSubmit((data) => {
           console.log(data);
         })}
@@ -33,6 +49,8 @@ const Introduction = () => {
           })}
           placeholder="Last Name"
         />
+        {/* This way we can identify if there are errors and show them */}
+        {errors.lastName && <p>{errors.lastName?.message}</p>}
         <input type="submit" />
       </form>
     </div>
