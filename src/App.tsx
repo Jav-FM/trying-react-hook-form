@@ -6,6 +6,7 @@ import FormState from "./Lessons/FormState";
 import SetValue from "./Lessons/SetValue";
 import SetValueMultiple from "./Lessons/SetValueMultiple";
 import Reset from "./Lessons/Reset";
+import Trigger from "./Lessons/Trigger";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
       <SetValueMultiple />
       <h2>reset</h2>
       <Reset />
+      <h2>trigger</h2>
+      <Trigger />
     </div>
   );
 }
