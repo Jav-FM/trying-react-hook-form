@@ -5,22 +5,26 @@ import Watch from "./Lessons/Watch";
 import FormState from "./Lessons/FormState";
 import SetValue from "./Lessons/SetValue";
 import SetValueMultiple from "./Lessons/SetValueMultiple";
+import Reset from "./Lessons/Reset";
 
 function App() {
   return (
     <div className="App">
-      <h1>Introduction</h1>
+      <h1>React Hook Form</h1>
+      <h2>Introduction</h2>
       <Introduction />
-      <h1>register</h1>
+      <h2>register</h2>
       <Register />
-      <h1>watch</h1>
+      <h2>watch</h2>
       <Watch />
-      <h1>formState</h1>
+      <h2>formState</h2>
       <FormState />
-      <h1>setValue</h1>
+      <h2>setValue</h2>
       <SetValue />
       <h3>set multiple values with one setValue</h3>
       <SetValueMultiple />
+      <h2>reset</h2>
+      <Reset />
     </div>
   );
 }
