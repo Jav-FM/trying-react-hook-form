@@ -1,8 +1,8 @@
-import React from "react";
 import "./App.css";
 import Introduction from "./Lessons/Introduction";
 import Register from "./Lessons/Register";
 import Watch from "./Lessons/Watch";
+import FormState from "./Lessons/FormState";
 
 function App() {
   return (
@@ -13,6 +13,8 @@ function App() {
       <Register />
       <h1>watch</h1>
       <Watch />
+      <h1>formState</h1>
+      <FormState />
     </div>
   );
 }
