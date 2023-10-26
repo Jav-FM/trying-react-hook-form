@@ -7,6 +7,10 @@ import SetValue from "./Lessons/SetValue";
 import SetValueMultiple from "./Lessons/SetValueMultiple";
 import Reset from "./Lessons/Reset";
 import Trigger from "./Lessons/Trigger";
+import SetError from "./Lessons/setError";
+import HandleSubmit from "./Lessons/handleSubmit";
+import ResetField from "./Lessons/ResetField";
+import Unregister from "./Lessons/Unregister";
 
 function App() {
   return (
@@ -28,6 +32,14 @@ function App() {
       <Reset />
       <h2>trigger</h2>
       <Trigger />
+      <h2>setError</h2>
+      <SetError />
+      <h2>handleSubmit</h2>
+      <HandleSubmit />
+      <h2>resetField</h2>
+      <ResetField />
+      <h2>unregister</h2>
+      <Unregister />
     </div>
   );
 }
