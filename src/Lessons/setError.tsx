@@ -61,44 +61,42 @@ const SetError = () => {
   // You can then clear that error con clearErrors
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input {...register("firstName")} placeholder="First Name" />
-        {errors.firstName?.message && <p>{errors.firstName.message}</p>}
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("firstName")} placeholder="First Name" />
+      {errors.firstName?.message && <p>{errors.firstName.message}</p>}
 
-        {errors.firstName?.types && (
-          <>
-            <p>{errors.firstName?.types.test}</p>
-            <p>{errors.firstName?.types.test1}</p>
-          </>
-        )}
+      {errors.firstName?.types && (
+        <>
+          <p>{errors.firstName?.types.test}</p>
+          <p>{errors.firstName?.types.test1}</p>
+        </>
+      )}
 
-        {errors.customError?.message && <p>{errors.customError.message}</p>}
+      {errors.customError?.message && <p>{errors.customError.message}</p>}
 
-        <button type="button" onClick={setCustomError}>
-          Set custom error
-        </button>
+      <button type="button" onClick={setCustomError}>
+        Set custom error
+      </button>
 
-        <button type="button" onClick={setCustomErrorWithFocus}>
-          Set custom error with focusing the input
-        </button>
+      <button type="button" onClick={setCustomErrorWithFocus}>
+        Set custom error with focusing the input
+      </button>
 
-        <button type="button" onClick={setMultipleErrors}>
-          Set multiple errors
-        </button>
+      <button type="button" onClick={setMultipleErrors}>
+        Set multiple errors
+      </button>
 
-        <button type="button" onClick={setErrorThatAffectsSubmition}>
-          Set custom error that affects submition
-        </button>
+      <button type="button" onClick={setErrorThatAffectsSubmition}>
+        Set custom error that affects submition
+      </button>
 
-        <input type="submit" />
-      </form>
-    </div>
+      <input type="submit" />
+    </form>
   );
 };
 

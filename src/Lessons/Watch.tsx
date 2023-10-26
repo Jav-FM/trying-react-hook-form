@@ -55,18 +55,16 @@ const Watch = () => {
   // but you dont want a re-render each time that changes occurs.
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input {...register("firstName")} placeholder="First Name" />
-        <input {...register("lastName")} placeholder="Last Name" />
-        <input type="submit" />
-      </form>
-    </div>
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("firstName")} placeholder="First Name" />
+      <input {...register("lastName")} placeholder="Last Name" />
+      <input type="submit" />
+    </form>
   );
 };
 

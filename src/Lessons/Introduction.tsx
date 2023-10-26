@@ -27,33 +27,31 @@ const Introduction = () => {
   console.log(watch());
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        {/* We can add individual requirements for each input 
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      {/* We can add individual requirements for each input 
         using an object as second parameter of register function */}
-        <input
-          {...register("firstName", { required: true, minLength: 4 })}
-          placeholder="First Name"
-        />
-        {/* We can include a message in the require variable, that will be
+      <input
+        {...register("firstName", { required: true, minLength: 4 })}
+        placeholder="First Name"
+      />
+      {/* We can include a message in the require variable, that will be
         used as the error message when an error exists. We can also do so with minLenght */}
-        <input
-          {...register("lastName", {
-            required: "This field is required.",
-            minLength: { value: 4, message: "Min length is 4" },
-          })}
-          placeholder="Last Name"
-        />
-        {/* This way we can identify if there are errors and show them */}
-        {errors.lastName && <p>{errors.lastName?.message}</p>}
-        <input type="submit" />
-      </form>
-    </div>
+      <input
+        {...register("lastName", {
+          required: "This field is required.",
+          minLength: { value: 4, message: "Min length is 4" },
+        })}
+        placeholder="Last Name"
+      />
+      {/* This way we can identify if there are errors and show them */}
+      {errors.lastName && <p>{errors.lastName?.message}</p>}
+      <input type="submit" />
+    </form>
   );
 };
 

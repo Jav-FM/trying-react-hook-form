@@ -26,21 +26,19 @@ const SetValue = () => {
   // We can set a group of inputs if we register them as an object:
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input {...register("firstName")} placeholder="First Name" />
-        {/* Press this button to set the input programatically with serValue */}
-        <button type="button" onClick={setValueProgramatically}>
-          setValue
-        </button>
-        <input type="submit" />
-      </form>
-    </div>
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("firstName")} placeholder="First Name" />
+      {/* Press this button to set the input programatically with serValue */}
+      <button type="button" onClick={setValueProgramatically}>
+        setValue
+      </button>
+      <input type="submit" />
+    </form>
   );
 };
 

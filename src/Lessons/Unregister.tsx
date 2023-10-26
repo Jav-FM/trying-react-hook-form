@@ -47,38 +47,36 @@ const Unregister = () => {
   // unregister(['firstName', 'lastName'])
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        {!checkbox1 && (
-          <input {...register("firstName")} placeholder="First Name" />
-        )}
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      {!checkbox1 && (
+        <input {...register("firstName")} placeholder="First Name" />
+      )}
 
-        <label>
-          <input type="checkbox" {...register("checkbox1")} />
-          Hide firstName input remainding its value
-        </label>
+      <label>
+        <input type="checkbox" {...register("checkbox1")} />
+        Hide firstName input remainding its value
+      </label>
 
-        <p>firstName current value: {`${firstName}`}</p>
+      <p>firstName current value: {`${firstName}`}</p>
 
-        {!checkbox2 && (
-          <input {...register("lastName")} placeholder="Last Name" />
-        )}
+      {!checkbox2 && (
+        <input {...register("lastName")} placeholder="Last Name" />
+      )}
 
-        <label>
-          <input type="checkbox" {...register("checkbox2")} />
-          Hide firstName input and unregister its value
-        </label>
+      <label>
+        <input type="checkbox" {...register("checkbox2")} />
+        Hide firstName input and unregister its value
+      </label>
 
-        <p>lastName current value: {`${lastName}`}</p>
+      <p>lastName current value: {`${lastName}`}</p>
 
-        <input type="submit" />
-      </form>
-    </div>
+      <input type="submit" />
+    </form>
   );
 };
 

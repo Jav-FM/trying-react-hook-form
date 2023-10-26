@@ -55,26 +55,24 @@ const Reset = () => {
   }, [formState, reset]);
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input {...register("firstName")} placeholder="First Name" />
-        <input {...register("lastName")} placeholder="Last Name" />
-        <button onClick={simpleReset}>Simple reset</button>
-        <button onClick={resetChangingDefault}>
-          Reset changing default values
-        </button>
-        <button onClick={resetKeepingDefault}>
-          Reset to another value withouw changing default values
-        </button>
-        <button onClick={resetParcially}>Reset only lastName</button>
-        <button type="submit">Submit and reset</button>
-      </form>
-    </div>
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("firstName")} placeholder="First Name" />
+      <input {...register("lastName")} placeholder="Last Name" />
+      <button onClick={simpleReset}>Simple reset</button>
+      <button onClick={resetChangingDefault}>
+        Reset changing default values
+      </button>
+      <button onClick={resetKeepingDefault}>
+        Reset to another value withouw changing default values
+      </button>
+      <button onClick={resetParcially}>Reset only lastName</button>
+      <button type="submit">Submit and reset</button>
+    </form>
   );
 };
 

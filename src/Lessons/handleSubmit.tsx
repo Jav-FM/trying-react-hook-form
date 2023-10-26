@@ -41,26 +41,24 @@ const HandleSubmit = () => {
   };
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        // It recibe to arguments, first one for submiting and the second one for when there is an error
-        onSubmit={handleSubmit(onSubmit, onError)}
-      >
-        <input
-          {...register("firstName", { required: true })}
-          placeholder="First Name"
-        />
+    <form
+      className="form"
+      // It recibe to arguments, first one for submiting and the second one for when there is an error
+      onSubmit={handleSubmit(onSubmit, onError)}
+    >
+      <input
+        {...register("firstName", { required: true })}
+        placeholder="First Name"
+      />
 
-        {/* A disabled input will bring "undefined" as value on the submited data */}
-        <input
-          {...register("lastName", { disabled: true })}
-          placeholder="Last Name"
-        />
+      {/* A disabled input will bring "undefined" as value on the submited data */}
+      <input
+        {...register("lastName", { disabled: true })}
+        placeholder="Last Name"
+      />
 
-        <input type="submit" />
-      </form>
-    </div>
+      <input type="submit" />
+    </form>
   );
 };
 

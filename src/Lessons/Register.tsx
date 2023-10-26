@@ -31,42 +31,40 @@ const Register = () => {
   // register('testArray.0') will create an array with one undefined element
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input
+        {...register("firstName", {
+          //We can use this structure on require to be more consistent with the API
+          required: { value: true, message: "This field is required." },
+          minLength: { value: 4, message: "Min length is 4" },
+          //For more flexibility in the validation we can use validate
+          //You can add any logic, you can even do async validations adding the "async" reserved word to the function
+          validate: (value) => {
+            return value === "Bill" || "You can only use Bill as first name";
+          },
         })}
-      >
-        <input
-          {...register("firstName", {
-            //We can use this structure on require to be more consistent with the API
-            required: { value: true, message: "This field is required." },
-            minLength: { value: 4, message: "Min length is 4" },
-            //For more flexibility in the validation we can use validate
-            //You can add any logic, you can even do async validations adding the "async" reserved word to the function
-            validate: (value) => {
-              return value === "Bill" || "You can only use Bill as first name";
-            },
-          })}
-          placeholder="First Name"
-        />
-        {errors.firstName && <p>{errors.firstName?.message}</p>}
-        <input
-          {...register("lastName", {
-            required: { value: true, message: "This field is required." },
-            minLength: { value: 4, message: "Min length is 4" },
-          })}
-          placeholder="Last Name"
-        />
-        {errors.lastName && <p>{errors.lastName?.message}</p>}
-        {/* We can define the type of value we want the input to return,
+        placeholder="First Name"
+      />
+      {errors.firstName && <p>{errors.firstName?.message}</p>}
+      <input
+        {...register("lastName", {
+          required: { value: true, message: "This field is required." },
+          minLength: { value: 4, message: "Min length is 4" },
+        })}
+        placeholder="Last Name"
+      />
+      {errors.lastName && <p>{errors.lastName?.message}</p>}
+      {/* We can define the type of value we want the input to return,
           for example here, even when an input with type number always returns a string,
           we can define it to return a number */}
-        <input type="number" {...register("age", { valueAsNumber: true })} />
-        <input type="submit" />
-      </form>
-    </div>
+      <input type="number" {...register("age", { valueAsNumber: true })} />
+      <input type="submit" />
+    </form>
   );
 };
 

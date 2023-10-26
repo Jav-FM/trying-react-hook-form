@@ -22,25 +22,20 @@ const SetValueMultiple = () => {
   };
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input
-          {...register("yourDetails.firstName")}
-          placeholder="First Name"
-        />
-        <input {...register("yourDetails.lastName")} placeholder="First Name" />
-        {/* Press this button to set the input programatically with setValue */}
-        <button type="button" onClick={setValuesProgramatically}>
-          setValue
-        </button>
-        <input type="submit" />
-      </form>
-    </div>
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("yourDetails.firstName")} placeholder="First Name" />
+      <input {...register("yourDetails.lastName")} placeholder="First Name" />
+      {/* Press this button to set the input programatically with setValue */}
+      <button type="button" onClick={setValuesProgramatically}>
+        setValue
+      </button>
+      <input type="submit" />
+    </form>
   );
 };
 

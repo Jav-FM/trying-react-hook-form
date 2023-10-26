@@ -26,24 +26,22 @@ const ResetField = () => {
   // resetField('firstName', {touchedFields: true})
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input {...register("firstName")} placeholder="First Name" />
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input {...register("firstName")} placeholder="First Name" />
 
-        <input {...register("lastName")} placeholder="Last Name" />
+      <input {...register("lastName")} placeholder="Last Name" />
 
-        <button type="button" onClick={resetFirstName}>
-          Reset first name
-        </button>
+      <button type="button" onClick={resetFirstName}>
+        Reset first name
+      </button>
 
-        <input type="submit" />
-      </form>
-    </div>
+      <input type="submit" />
+    </form>
   );
 };
 

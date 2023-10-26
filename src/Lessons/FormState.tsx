@@ -52,24 +52,22 @@ const FormState = () => {
   }, [formState]);
 
   return (
-    <div className="App">
-      <form
-        className="form"
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <input
-          {...register("firstName", { required: "Is required" })}
-          placeholder="First Name"
-        />
-        <input
-          {...register("lastName", { required: "Is required" })}
-          placeholder="Last Name"
-        />
-        <input type="submit" />
-      </form>
-    </div>
+    <form
+      className="form"
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+      })}
+    >
+      <input
+        {...register("firstName", { required: "Is required" })}
+        placeholder="First Name"
+      />
+      <input
+        {...register("lastName", { required: "Is required" })}
+        placeholder="Last Name"
+      />
+      <input type="submit" />
+    </form>
   );
 };
 
