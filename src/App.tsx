@@ -11,6 +11,8 @@ import SetError from "./Lessons/setError";
 import HandleSubmit from "./Lessons/handleSubmit";
 import ResetField from "./Lessons/ResetField";
 import Unregister from "./Lessons/Unregister";
+import ControllerDemo from "./Lessons/Controller";
+import UseFieldArray from "./Lessons/UseFieldArray";
 
 function App() {
   return (
@@ -40,6 +42,10 @@ function App() {
       <ResetField />
       <h2>unregister</h2>
       <Unregister />
+      <h2>Controller</h2>
+      <ControllerDemo />
+      <h2>useFieldArray</h2>
+      <UseFieldArray />
     </div>
   );
 }
